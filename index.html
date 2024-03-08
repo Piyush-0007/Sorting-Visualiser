@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+        <h1 class="heading">SORTING VISUALIZER</h1>
+        <div class="options">
+            <div class="initals">
+
+                <button class="init btn" >Init</button>
+                <button class="sort btn" >Sort</button>
+                <button class="stop btn hide" >Stop</button>
+                <select name = "method" id="sort-method" class="dropdown">
+                    <option value="insertionSort" id="insertionSort" class="sorting-opt">Insertion Sort</option>
+                    <option value="bubbleSort" id="bubbleSort" class="sorting-opt">Bubble Sort</option>
+                    <option value="selectionSort" id="selectionSort" class="sorting-opt">Selection Sort</option>
+                    <option value="mergeSort" id="mergeSort" class="sorting-opt">Merge Sort</option>
+                    <option value="quickSort" id="quickSort" class="sorting-opt">Quick Sort</option>
+                </select>
+                <select name = "method" id="speed" class="dropdown">
+                    <option value="0.25" id="sp-0.25" class="sorting-opt">0.25x</option>
+                    <option value="0.5" id="sp-0.5" class="sorting-opt">0.5x</option>
+                    <option value="0.75" id="sp-0.75" class="sorting-opt">0.75x</option>
+                    <option value="1" id="sp-1x" class="sorting-opt" selected>1x</option>
+                    <option value="1.25" id="sp-1.25x" class="sorting-opt">1.25x</option>
+                    <option value="1.5" id="sp-1.5x" class="sorting-opt">1.5x</option>
+                    <option value="2" id="sp-2" class="sorting-opt">2x</option>
+                </select>
+                <label class="desc-label"> <input type="checkbox" id="desc" value = 25>Non-Increasing </label>
+ 
+            </div>
+            <div class="tooltip">
+                <div class="sliderValue">
+                    <input type="number" id="range-value" value = 25 min = 2 max = 500 maxlength="3">
+                </div>
+
+
+                <div class="range">
+                    <p class="range-limit">2</p>
+                    <input type="range" name="value" id="value" min = 2 max = 500 value = 25 step = 1>
+                    <p class="range-limit">500</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container"></div>
+    </main>
+    
+    <!-- <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea> -->
+    <script src="index.js" type="module"></script>
+    
+</body>
+</html>
