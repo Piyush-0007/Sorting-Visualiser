@@ -113,6 +113,9 @@ document.querySelector(".sort").addEventListener("click", ()=>{
     case "2":
       speed = 10;
       break;
+    default:
+      speed = 0;
+      break;
   }
 
   switch(technique){

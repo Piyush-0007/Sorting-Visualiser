@@ -92,8 +92,7 @@ body{
     display: none;
     
 }
-.tooltip:hover #range-value{
-    /* opacity: 1; */
+.options:hover #range-value, .heading:hover #range-value{
     display: block;
 }
 
