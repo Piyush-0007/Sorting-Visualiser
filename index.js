@@ -1,5 +1,5 @@
 import { bubbleSort, display, insertionSort, mergeSort, quickSort, selectionSort } from "./sorting.js";
-// let n = window.innerWidth/2.5;
+
 let n = 25;
 export let arr = [];
 export let time = 70;
@@ -17,7 +17,7 @@ function init() {
   display();
 }
 
-async function sort(method, speed) {
+async function sort(method) {
 
   stopFlag = false;
   const stop = document.querySelector('.stop');
@@ -39,7 +39,6 @@ async function sort(method, speed) {
   sort.classList.add('disabled');
   sort.classList.add('hide');
 
-  time = speed;
   const desc = document.querySelector('#desc').checked;
   await method(desc, 0, arr.length-1);
   
@@ -89,54 +88,57 @@ document.querySelector("#range-value").addEventListener("input",function(){
 document.addEventListener("DOMContentLoaded", init);
 document.querySelector(".init").addEventListener("click", init);
 
-document.querySelector(".sort").addEventListener("click", ()=>{
-  let technique = document.querySelector('#sort-method').value;
-  let speed = document.querySelector('#speed').value;
-  switch (speed) {
+document.getElementById('speed').addEventListener('change',(e)=>{
+  const inp = e.target.value;
+  switch (inp) {
     case "0.25":
-      speed = 300;
+      time = 300;
       break;
     case "0.5":
-      speed = 200;
+      time = 200;
       break;
     case "0.75":
-      speed = 100;
+      time = 100;
       break;
     case "1":
-      speed = 70;
+      time = 70;
       break;
     case "1.25":
-      speed = 50;
+      time = 50;
       break;
     case "1.50":
-      speed = 30;
+      time = 30;
       break;
     case "1.75":
-      speed = 20;
+      time = 20;
       break;
     case "2":
-      speed = 10;
+      time = 10;
       break;
     default:
-      speed = 0;
+      time = 0;
       break;
   }
 
-  switch(technique){
+})
+document.querySelector(".sort").addEventListener("click", ()=>{
+  let technique = document.querySelector('#sort-method');
+
+  switch(technique.value){
     case "mergeSort":
-      sort(mergeSort, speed);
+      sort(mergeSort);
       break;
     case "quickSort":
-      sort(quickSort, speed);
+      sort(quickSort);
       break;
     case "insertionSort":
-      sort(insertionSort, speed);
+      sort(insertionSort);
       break;
     case "selectionSort":
-      sort(selectionSort, speed);
+      sort(selectionSort);
       break;
     case "bubbleSort":
-      sort(bubbleSort, speed);
+      sort(bubbleSort);
       break;
   }
 });
