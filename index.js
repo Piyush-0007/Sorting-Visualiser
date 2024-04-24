@@ -47,9 +47,11 @@ async function sort(method, speed) {
   init.disabled = false;
   range.disabled = false;
   rvalue.disabled = false;
+  sort.disabled = false;
 
+  stop.classList.add('hide'); 
   sort.classList.remove('hide');
-  stop.classList.add('hide');
+  sort.classList.remove('disabled');
 
 
 }
@@ -67,7 +69,9 @@ document.querySelector('#value').addEventListener("input",function(){
 document.querySelector('.stop').addEventListener('click',function(){
   stopFlag = true;
   this.classList.add('hide');
-
+  const sort = document.querySelector(".sort");
+  sort.disabled = false;
+  sort.classList.add('disabled');
 });
 
 document.querySelector("#range-value").addEventListener("input",function(){
