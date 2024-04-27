@@ -1,0 +1,250 @@
+/* *{
+    padding: 0; margin: 0;box-sizing: border-box;
+} */
+body{
+    padding: 0;margin:0;
+    overflow-x: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    width: 95%;
+    height: 60vh;
+
+}
+
+.bar{
+    width : inherit;
+    background : #2d819f;
+}
+.element{
+    width: 100%;
+    height: 100%;
+    /* margin: 1px; */
+    display: flex;
+    /* justify-content: flex-end; */
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+.label{
+    text-align: center;
+    font-size: medium;
+    font-weight: 500;
+    /* display: none; */
+    /* color: rgb(199, 199, 199); */
+
+}
+
+.heading{
+    font-family: monospace;
+    font-size: 2.15rem;
+    background-color: #385471;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    padding-top : 1rem;
+    margin:0;   
+    letter-spacing: 0.75rem;;
+    /* text-decoration: underline; */
+    /* border-bottom: solid white; */
+    /* border-width: 50px ; */
+}
+.options{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    border-bottom : 2px solid;
+    text-align: center;
+    background-color: #385471;
+    margin:0;
+    
+}
+#value{
+    width: 30vw;
+}
+
+.range{
+    display: flex;
+    align-items: center;
+}
+.initial{
+    margin-top: 1rem;
+}
+#max-range-value{
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px 10px #a8a7a795;
+    color : whitesmoke;   
+
+}
+#range-value{
+    top: -2rem;;
+    margin-top:1rem; 
+    font-size: 1.1rem;
+    position: absolute; 
+    background-color: #555;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    border: 0;
+    width: 3rem;
+    left :5%;
+    transition: display 0.3s, left 0.1s; 
+    /* opacity: 0; */
+    display: none;
+    
+}
+.options:hover #range-value, .heading:hover #range-value{
+    display: block;
+}
+
+.white-title-text{
+    color : white;
+    font-size: 1.25rem;
+    padding: 0 7px;
+}
+.sliderValue{
+    width: 30vw;
+    position: relative;
+}
+.dropdown , .btn{
+
+    padding: 7px;
+    border-radius: 7px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.463);
+    font-weight: 700;
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+.btn{
+    width : 4rem;
+}
+.init{
+    background-color: #31c4f9;
+    border-color: #00a2dd;
+    color : white;
+}
+.init:hover{
+    background-color: #00a2dd;
+}
+.sort{
+    color :#00a2dd;
+    border-color: #00a2dd;;
+    transition: all 0.2s;
+}
+.sort:hover{
+    background-color: #00a2dd;;
+    color : white;
+}
+.sorting-opt{
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #555;
+    border-radius: 10px;
+}
+.sorting-opt:checked{
+    background-color: lightseagreen;
+}
+.disabled{
+    color: #333333d7 !important; 
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5) !important; 
+    background-color: #ccc !important;
+    border-color: #ccc;
+}
+.stop{
+    color : rgb(200, 0, 0);
+    border-color: rgb(200, 0, 0);
+}
+.stop:hover{
+    background-color: rgb(231, 28, 28);
+    color : white;
+}
+.hide{
+    display: none !important;
+}
+.desc-label{
+    font-size: 1.2rem;
+    color : whitesmoke;
+
+}
+
+#menu{
+    display: none;
+}
+
+@media (max-width : 900px){
+
+    .options{
+        position: relative;
+    }
+    .initial{
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        position: absolute;
+        top: 3.6rem;
+        /* display: none; */
+        background-color: white;
+        padding: 0.5rem;
+        color: black;
+        border-radius: 10px;
+        /* border: solid 1px black; */
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.853);
+        transition: all 20s ease-in-out;
+
+    }
+    .desc-label{
+        color : rgba(0, 0, 0, 0.904);
+    }
+    .btn{
+        width : 100%;
+    }
+    #menu{
+        display: block;
+        margin-left: 2rem;
+        cursor: pointer;
+        
+    }
+}
+@media (max-width: 350px){
+    .heading{
+        font-size: 1.5rem;
+    }
+    .white-title-text{
+        font-size: 1rem;;
+    }
+    .initial{
+        top:3rem;
+    }
+    #menu{
+        margin-left: 0rem;
+        
+    }
+}
+@media (max-width : 250px){
+    .heading{   
+        font-size: 0.8rem;
+    }
+    .white-title-text, .initial{
+        font-size: 0.5rem !important; 
+    }
+    .initial{
+        top:1.25rem;
+        width: 50%;
+    }
+}
